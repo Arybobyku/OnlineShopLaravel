@@ -27,7 +27,7 @@ class UserController extends Controller
         }
         return $this->error('Email Dosent Exist');
     }
-    //registarasi fungsi
+    //registarasi fungsi------------------------------------------------
     public function register(Request $request){
         $validasi = Validator::make($request->all(),[
             'name'=>'required',
@@ -52,7 +52,7 @@ class UserController extends Controller
         return $this->error('gagal registrasi');
 
     }
-    //error fungsi
+    //error fungsi-------------------------------------
     public function error($param){
         return response()->json([
             'success'=>0,
