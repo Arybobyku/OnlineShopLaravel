@@ -49,8 +49,12 @@
                                 </li>
                             @endif
                         @else
+                        
+                        <li class="nav-item">
+                           <a href="{{route('produk')}}" class="nav-link">Produk</a>
+                           </li>
                            <li class="nav-item">
-                           <a href="{{url('user')}}" class="nav-link">User</a>
+                           <a href="{{route('user')}}" class="nav-link">User</a>
                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
