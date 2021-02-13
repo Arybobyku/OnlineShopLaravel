@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user','userController@index')->name('user');
 Route::get('/produk','produkController@index')->name('produk');
 Route::post('/produk','produkController@store');
+Route::Delete('/produk/destroy/{id}','produkController@destroy')->name('produk.destroy');

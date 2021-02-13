@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\produk;
-
+use Illuminate\Support\Facades\Storage;
 class produkController extends Controller
 {
     /**
@@ -94,6 +94,14 @@ class produkController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $filename = produk::where('id',$id)->get();
+        $path = 'storage/produk/'.$filename[0]->image;
+        if(file_exists(public_path($path))){
+            unlink(public_path($path));
+          }else{
+            dd('File does not exists.');    
+          }
+        produk::where('id',$id)->delete();
+        return redirect('produk')->with('status','Berhasil Di Hapus');
     }
 }

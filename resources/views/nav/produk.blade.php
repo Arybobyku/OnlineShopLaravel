@@ -35,8 +35,14 @@
       <td>{{$produk->category_id}}</td>
       <td>{{$produk->image}}</td>
       <td>
-        <a class="btn btn-warning">Update</a>
-        <a class="btn btn-danger">Delete</a>
+          <div class="row">
+          <a class="btn btn-warning col-md-6">Update</a>
+          <form action="{{route('produk.destroy',$produk->id)}}" method="post" class="col-md-6">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-danger">DELETE</button>
+          </form>
+          </div>
       </td>
   </tr>
   @endforeach
