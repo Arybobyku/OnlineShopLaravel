@@ -19,3 +19,5 @@ use Illuminate\Http\Request;
 Route::post('login','Api\UserController@login');
 Route::post('register','Api\UserController@register');
 Route::get('produk','Api\ProdukController@index');
+Route::get('chatting','Api\chattingController@index');
+Route::post('chatting','Api\chattingController@create');
