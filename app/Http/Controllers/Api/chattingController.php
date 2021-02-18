@@ -54,10 +54,11 @@ class chattingController extends Controller
     public function send(Request $request){
                 $title = $request->title;
                 $message = $request->message;
+                $token = $request->token;
 
                 $curl = curl_init();
                 $authKey = "key=AAAAuGdF3eA:APA91bHir5e_xRAHLnNsp9s74KQ0BrmjEqQf3OtkIbPn1wbn0kPe_8Pj89vbzusL8HcTypHxQv-OSKegz6Nr396uBHBf8LmOOMl1PdVZeEWFa7EJNa-zRjocDMIJ9Iomdg59Mk_dMmG_";
-                $registration_ids = '["fNd6T6omRKm9mVODG_eIHG:APA91bHuXOXDUodUZ2XXtWnuTq7KSt9ZYxpsMeR8NR8tLZMCmsyeuGM3Eqlu9e0_karDjxayZ6_q3uCAXJj0IPQq0ob2ThOmVOE2-pA1nPCBc3hUHbHnSIkaf88PBWlJIGwp2yGOhQaG"]';
+                $registration_ids = '["'.$token.'"]';
                 curl_setopt_array($curl, array(
                 CURLOPT_URL => "https://fcm.googleapis.com/fcm/send",
                 CURLOPT_RETURNTRANSFER => true,
