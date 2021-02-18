@@ -21,3 +21,4 @@ Route::post('register','Api\UserController@register');
 Route::get('produk','Api\ProdukController@index');
 Route::get('chatting','Api\chattingController@index');
 Route::post('chatting','Api\chattingController@create');
+Route::post('send','Api\chattingController@send');
